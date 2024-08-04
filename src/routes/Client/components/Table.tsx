@@ -32,12 +32,12 @@ const Table = () => {
         return table.main.reduce((total: number, row: any) => total + parseFloat(row.hours), 0);
     };
 
-    const getInvoice = async () => {
+    // const getInvoice = async () => {
 
-        if (!tableId) return;
-        const url = import.meta.env.VITE_API_URL + '/tables/' + tableId + '/invoice';
-        window.open(url)
-    };
+    //     if (!tableId) return;
+    //     const url = import.meta.env.VITE_API_URL + '/tables/' + tableId + '/invoice';
+    //     window.open(url)
+    // };
 
     return (
         <div className="col col-sm-12">
@@ -89,9 +89,9 @@ const Table = () => {
                         {table && calculateTotalHours() * table.rate + table.additional.reduce((total: number, row: any) => total + parseFloat(row.price), 0) + ' €'}
                     </span>
                 </div>
-                <button className="invoice" onClick={getInvoice}>
+                {/* <button className="invoice" onClick={getInvoice}>
                     Get Invoice
-                </button>
+                </button> */}
             </div>
         </div>
     );
